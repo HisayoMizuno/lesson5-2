@@ -68,6 +68,7 @@ class ViewController: UIViewController {
     }
     //----------------------------------------------
     //「戻る」タップ時
+    
     @IBAction func TapbackButton(_ sender: Any) {
         dnimgNo()
         viewImage()
