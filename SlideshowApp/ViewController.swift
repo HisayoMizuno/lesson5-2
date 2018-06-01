@@ -20,20 +20,25 @@ class ViewController: UIViewController {
     var timer:Timer!
     var timer_sec: Float = 0
     let imgAryname = ["img0" , "img1" , "img2"]
-    
+    var imag:UIImage!
     var dspimgNo = 0
     
     //------------------------------------------------------
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if imag == nil {
         // バンドルした画像ファイルを読み込み
         super.viewDidLoad()
         let defimg = UIImage(named: imgAryname[0])
         imgArea.image = defimg
-        //再生ボタンとして表示
-        //playButton.layer.borderWidth = 1
-        playButton.setTitle("再生", for:UIControlState.normal)
 
+        }
+        else{
+            imgArea.image = imag
+        }
+        //再生ボタンとして表示
+        playButton.setTitle("再生", for:UIControlState.normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -94,7 +99,7 @@ class ViewController: UIViewController {
         else{
             playButton.layer.borderWidth = 1
             playButton.setTitle("再生", for:UIControlState.normal)
-            
+
             self.timer.invalidate() // タイマーを破棄
             self.timer = nil // timerをnilにする(startTimer用）
             backButton.isEnabled = true
@@ -102,17 +107,18 @@ class ViewController: UIViewController {
         }
     }
     
+    //----------------------------------------------
+    @IBAction func onTapimage(_ sender: Any) {
+        print("aaa")
+    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+            print("bbb")
+            let resultViewController:ResultViewController = segue.destination as! ResultViewController
+            resultViewController.imag = imgArea.image!
+    }
+    //----------------------------------------------
     
-    
-}
-
-
-
-
-
-
-
-
+} //end
 
 
 
