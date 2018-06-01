@@ -105,8 +105,7 @@ class ViewController: UIViewController {
             backButton.isEnabled = true
             nextButton.isEnabled = true
         }
-    }
-    
+    }    
     //----------------------------------------------
     @IBAction func onTapimage(_ sender: Any) {
         print("aaa")
