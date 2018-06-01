@@ -20,7 +20,7 @@ class ViewController: UIViewController {
     var timer:Timer!
     var timer_sec: Float = 0
     let imgAryname = ["img0" , "img1" , "img2"]
-    var imag:UIImage!
+    var imag:UIImage! //
     var dspimgNo = 0
     
     //------------------------------------------------------
@@ -105,11 +105,12 @@ class ViewController: UIViewController {
             backButton.isEnabled = true
             nextButton.isEnabled = true
         }
-    }    
+    }
     //----------------------------------------------
     @IBAction func onTapimage(_ sender: Any) {
         print("aaa")
     }
+    //segueで画像を渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
             print("bbb")
             let resultViewController:ResultViewController = segue.destination as! ResultViewController

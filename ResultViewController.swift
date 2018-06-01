@@ -27,6 +27,7 @@ class ResultViewController: UIViewController {
 
     @IBAction func TapBackButton(_ sender: Any) {
     }
+    //segueで画像を渡す
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let viewController:ViewController = segue.destination as! ViewController
         viewController.imag = imgArea2.image!
